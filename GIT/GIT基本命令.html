@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://www.kancloud.cn/xiongqi/git123/851036 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<title>1.git基本命令 · git · 看云</title>
+    <meta name="description" content="git命令">
+    <meta name="keywords" content="文档托管,文档管理,在线创作,文档在线管理,企业知识管理,知识库管理,在线知识管理,文档托管平台,电子出版,在线写书,文档在线转换,在线编辑,在线阅读,个人出版,知识付费,gitbook,开发手册,api手册,在线学习,文档编辑">
+            <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" data-react-helmet="true">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                                
+<script src="./1.git基本命令 · git · 看云_files/index.js.下载" async="" data-plugin-name="theme-default"></script><link rel="stylesheet" href="./1.git基本命令 · git · 看云_files/style.css"></head>
+<body>
+<div id="main"><p>1.三个区的概念(工作区,暂存区,版本库)</p>
+<pre><code>git init
+git config --global user.name chengbenchao
+git config --global user.email 1156152035@qq.com
+git config --global --list
+git config --get user.name
+git add xx
+//添加所有修改的内容
+git add .
+git commit -m"xxx"
+git status
+git diff
+</code></pre>
+<p>2.版本回退</p>
+<pre><code>git log
+git log --pretty=oneline
+git reflog
+git reset --hard XXXXX
+</code></pre>
+<p>3.撤销修改和删除</p>
+<pre><code>git checkout xx
+git rm xx
+//从版本库中删除后,要commit
+git commit -m"xx"
+</code></pre>
+<p>4.本地仓库和远程仓库的连接</p>
+<pre><code>git remote add origin xxx
+git push -u origin master
+git remote -v
+//取消远程关联仓库
+git remote remove origin
+</code></pre>
+<p>5.克隆远程仓库到本地</p>
+<pre><code>git clone xxx
+</code></pre>
+<p>6.配置ssh</p>
+<pre><code>ssh-keygen -t rsa -C 1156152035@qq.com
+</code></pre>
+<p>7.分支管理</p>
+<pre><code>//查看分支
+git branch
+//创建分支
+git branch &lt;name&gt;
+//切换分支
+git checkout &lt;name&gt;
+//创建+切换分支
+git checkout -b &lt;name&gt;
+//和远程分支连接
+git checkout -b &lt;branch name&gt; origin/&lt;branch name&gt;
+//合并某分支到当前分支
+git merge &lt;name&gt;
+git merge --no-ff -m"xx" &lt;branch name&gt;
+//查看分支合并图
+git log --graph --pretty=oneline --abbrev-commit
+//将修改内容添加到工作区的存储区
+git stash
+//查看存储区的内容
+git stash list
+//恢复存储区的内容
+git stash pop
+//删除分支
+git branch -d &lt;branch name&gt;
+git branch -D &lt;branch name&gt;
+//推送分支
+git push origin &lt;branch name&gt;
+</code></pre>
+</div><div class="article-navigation"></div><div class="article-foot"></div></div></div></div></div></div>
+<script type="application/payload+json">
+    {
+        "config":{"title":"git","description":"git\u547d\u4ee4","cover":"https:\/\/cover.kancloud.cn\/xiongqi\/git123!middle","author":{"name":"xiongqi97","email":"1156152035@qq.com","url":"https:\/\/www.kancloud.cn\/@xiongqi"}},
+        "options":{"book":{"id":400109,"title":"git","namespace":"xiongqi","name":"git123","price":0,"cover":"https:\/\/cover.kancloud.cn\/xiongqi\/git123","middle_cover":"https:\/\/cover.kancloud.cn\/xiongqi\/git123!middle","small_cover":"https:\/\/cover.kancloud.cn\/xiongqi\/git123!small"},"plugins":{"host":"plugins.kancloud.cn","scheme":"https"},"web":{"host":"www.kancloud.cn","scheme":"https"},"environment":"reader","base":"\/xiongqi\/git123\/content","entry":"\/xiongqi\/git123"},
+        "style": "",
+        "article":{"path":"851036","ref":"default.md","title":"1.git\u57fa\u672c\u547d\u4ee4","content":"1.\u4e09\u4e2a\u533a\u7684\u6982\u5ff5(\u5de5\u4f5c\u533a,\u6682\u5b58\u533a,\u7248\u672c\u5e93)\n```\ngit init\r\ngit config --global user.name chengbenchao\r\ngit config --global user.email 1156152035@qq.com\r\ngit config --global --list\r\ngit config --get user.name\r\ngit add xx\r\n\/\/\u6dfb\u52a0\u6240\u6709\u4fee\u6539\u7684\u5185\u5bb9\r\ngit add .\r\ngit commit -m\"xxx\"\r\ngit status\r\ngit diff\n```\n2.\u7248\u672c\u56de\u9000\n```\ngit log\r\ngit log --pretty=oneline\r\ngit reflog\r\ngit reset --hard XXXXX\n```\n3.\u64a4\u9500\u4fee\u6539\u548c\u5220\u9664\n```\ngit checkout xx\r\ngit rm xx\r\n\/\/\u4ece\u7248\u672c\u5e93\u4e2d\u5220\u9664\u540e,\u8981commit\r\ngit commit -m\"xx\"\n```\n4.\u672c\u5730\u4ed3\u5e93\u548c\u8fdc\u7a0b\u4ed3\u5e93\u7684\u8fde\u63a5\n```\ngit remote add origin xxx\r\ngit push -u origin master\r\ngit remote -v\r\n\/\/\u53d6\u6d88\u8fdc\u7a0b\u5173\u8054\u4ed3\u5e93\r\ngit remote remove origin\n```\n5.\u514b\u9686\u8fdc\u7a0b\u4ed3\u5e93\u5230\u672c\u5730\n```\ngit clone xxx\n```\n6.\u914d\u7f6essh\n```\nssh-keygen -t rsa -C 1156152035@qq.com\n```\n7.\u5206\u652f\u7ba1\u7406\n```\n\/\/\u67e5\u770b\u5206\u652f\r\ngit branch\r\n\/\/\u521b\u5efa\u5206\u652f\r\ngit branch <name>\r\n\/\/\u5207\u6362\u5206\u652f\r\ngit checkout <name>\r\n\/\/\u521b\u5efa+\u5207\u6362\u5206\u652f\r\ngit checkout -b <name>\r\n\/\/\u548c\u8fdc\u7a0b\u5206\u652f\u8fde\u63a5\r\ngit checkout -b <branch name> origin\/<branch name>\r\n\/\/\u5408\u5e76\u67d0\u5206\u652f\u5230\u5f53\u524d\u5206\u652f\r\ngit merge <name>\r\ngit merge --no-ff -m\"xx\" <branch name>\r\n\/\/\u67e5\u770b\u5206\u652f\u5408\u5e76\u56fe\r\ngit log --graph --pretty=oneline --abbrev-commit\r\n\/\/\u5c06\u4fee\u6539\u5185\u5bb9\u6dfb\u52a0\u5230\u5de5\u4f5c\u533a\u7684\u5b58\u50a8\u533a\r\ngit stash\r\n\/\/\u67e5\u770b\u5b58\u50a8\u533a\u7684\u5185\u5bb9\r\ngit stash list\r\n\/\/\u6062\u590d\u5b58\u50a8\u533a\u7684\u5185\u5bb9\r\ngit stash pop\r\n\/\/\u5220\u9664\u5206\u652f\r\ngit branch -d <branch name>\r\ngit branch -D <branch name>\n\/\/\u63a8\u9001\u5206\u652f\ngit push origin <branch name>\n```"},
+        "summary":[{"id":851036,"pid":0,"name":"default.md","title":"1.git\u57fa\u672c\u547d\u4ee4","is_probation":0,"ref":"default.md","path":"851036","index":0}]
+    }
+</script>
+<script type="text/javascript" src="./1.git基本命令 · git · 看云_files/reader.js.下载"></script>
+<script type="text/javascript">
+    kancloud.bootstrap();
+</script>
+    <!-- Google Analytics -->
+    <script>
+        window.ga = window.ga || function () {
+            (ga.q = ga.q || []).push(arguments)
+        };
+        ga.l      = +new Date;
+        ga('create', 'UA-85687835-1', 'auto', 'web');
+        ga('set', 'transport', 'beacon');
+        
+                ga('web.send', 'pageview', {
+            dimension1:400109
+        });
+        window.sendPageView = function (page, title) {
+            ga('web.set', 'page', page);
+            ga('web.set', 'title', title);
+            ga('web.send', 'pageview', {
+                dimension1: 400109
+            });
+        }
+            </script>
+    <script async="" src="./1.git基本命令 · git · 看云_files/analytics.js.下载"></script>
+    <!-- End Google Analytics -->
+
+
+</body></html>
